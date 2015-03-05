@@ -1,5 +1,7 @@
-
 xware (xunlei) .deb package for Raspberry Pi, Debian, Ubuntu
+=============================================================
+
+Download: https://github.com/GutenYe/debs/releases/tag/xware
 
 Build .deb package
 -------------------
