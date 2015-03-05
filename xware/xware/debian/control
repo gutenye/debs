@@ -1,0 +1,11 @@
+Source: xware
+Standards-Version: 1.0.31
+Section: misc
+Priority: optional
+Build-Depends: debhelper (>= 9)
+Maintainer: Guten Ye
+
+Package: xware
+Architecture: armhf amd64 i386
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Thunder downloader daemon

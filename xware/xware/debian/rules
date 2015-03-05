@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+
+VERSION=$(shell dpkg-parsechangelog -ldebian/changelog | sed -rne 's,^Version: ([^-]+).*,\1,p')
+
+%:
+	dh $@
+
+override_dh_install:
+	dh_install
+	install -dm777 debian/xware/opt/xware
+	install -dm777 debian/xware/opt/xware/cfg
+	install -Dm755 $(DEB_HOST_ARCH)/ETMDaemon debian/xware/opt/xware/lib/ETMDaemon
+	install -Dm755 $(DEB_HOST_ARCH)/EmbedThunderManager debian/xware/opt/xware/lib/EmbedThunderManager
+	install -Dm755 $(DEB_HOST_ARCH)/vod_httpserver debian/xware/opt/xware/lib/vod_httpserver
+	install -Dm755 $(DEB_HOST_ARCH)/portal debian/xware/opt/xware/portal
+	install -Dm755 debian/xware.init debian/xware/etc/init.d/xware
+
+override_dh_strip:
+
+override_dh_shlibdeps:
+
+override_dh_fixperms:
+
+get-orig-source:
+	if [ ! -e "../xware_$(VERSION).orig.tar.gz" ]; then \
+		mkdir tmp/xware -p; \
+		unzip -q ../Xware$(VERSION)_armel_v5te_glibc.zip -d tmp/xware/armhf; \
+		unzip -q ../Xware$(VERSION)_x86_32_glibc.zip -d tmp/xware/i386; \
+		tar -C tmp -zcf ../xware_$(VERSION).orig.tar.gz xware; \
+		rm -r tmp; \
+	fi

@@ -1,0 +1,17 @@
+*.tar.gz
+*.tar.xz
+*.tgz
+*.gem
+*.ttf
+*.dfont
+*.ttc
+*.deb
+*.zip
+
+*.dsc
+*.build
+*.changes
+*.upload
+
+/*/*/*
+!/*/*/debian
