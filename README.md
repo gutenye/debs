@@ -5,21 +5,22 @@ Debs, My .deb packages for Raspbian(Raspberry Pi), Debian and Ubuntu
 |----------------|------------------------------------------ |
 | Homepage:      | https://github.com/GutenYe/debs        |
 | Author:	       | Guten                                     |
-| License:       | GPLv3                                       |
+| License:       | GPL                                      |
 | Issue Tracker: | https://github.com/GutenYe/debs/issues |
 
 
 Getting Started
 ---------------
 
-1. Download .deb files from [Releases](https://github.com/GutenYe/debs/releases)
-2. Install: `sudo dpkg -i x.deb`
-
+1. Download hello.deb files from [Releases](https://github.com/GutenYe/debs/releases)
+2. Install: `sudo dpkg -i hello.deb`
+3. Edit Configuration: `/etc/init.d/hello`
 
 Build
 -----
 
-	$ ./make-debs.sh
+1. Download the upstream package
+2. Build: `$ ./make-debs.sh`
 
 Copyright
 -------
