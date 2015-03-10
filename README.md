@@ -8,13 +8,27 @@ Debs, My .deb packages for Raspbian(Raspberry Pi), Debian and Ubuntu
 | License:       | GPL                                      |
 | Issue Tracker: | https://github.com/GutenYe/debs/issues |
 
+A List of Packages
+-------------------
 
-Getting Started
+- [xware](http://g.xunlei.com/forum-51-1.html): Xunlei in Linux (迅雷固件)
+
+Supported Distributions
+---------------------
+
+**Raspbian**: raspbian-wheezy <br>
+**Debian**: wheezy <br>
+**Ubuntu**: utopic <br>
+
+Install a Package
 ---------------
 
-1. Download hello.deb files from [Releases](https://github.com/GutenYe/debs/releases)
-2. Install: `sudo dpkg -i hello.deb`
-3. Edit Configuration: `/etc/init.d/hello`
+Replace the `DIST` with the name listed above, e.g. raspbian-wheezy
+
+	$ sudo apt-key adv --keyserver pgp.mit.edu --recv-keys FD337D66
+	$ echo 'deb http://guten.me/debs DIST main' | sudo /etc/apt/sources.list.d/guten.list
+	$ sudo apt-get update
+	$ sudo apt-get install <pkg>
 
 Build
 -----

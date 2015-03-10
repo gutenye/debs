@@ -36,16 +36,13 @@ case "$1" in
 
   stop)
     log_daemon_msg "Stopping $NAME" "$NAME" || true
-    if start-stop-daemon --stop --oknodo --exec $DAEMON -- -s ; then
-      log_end_msg 0 || true
-    else
-      log_end_msg 1 || true
-    fi
+    $DAEMON -s
+    log_end_msg 0 || true
     ;;
 
   restart)
     log_daemon_msg "Restarting $NAME" "$NAME" || true
-    start-stop-daemon --stop --oknodo --exec $DAEMON -- -s
+    $DAEMON -s
     sleep 10
     if start-stop-daemon --start --oknodo --chuid $USER --exec $DAEMON -- $DAEMON_ARGS; then
       log_end_msg 0 || true
