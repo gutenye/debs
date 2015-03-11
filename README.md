@@ -13,7 +13,7 @@ A List of Packages
 
 - [xware](http://g.xunlei.com/forum-51-1.html): Xunlei in Linux (迅雷固件)
 
-Supported Distributions
+Supported Releases
 ---------------------
 
 **Raspbian**: raspbian-wheezy <br>
@@ -23,10 +23,13 @@ Supported Distributions
 Install a Package
 ---------------
 
-Replace the `DIST` with the name listed above, e.g. raspbian-wheezy
+1. Get your release name by `$ cat /etc/*-release`
+
+2. Replace the `RELEASE` with the name found above, e.g. `raspbian-wheezy` for Raspbian, `wheezy` for Debian, `utopic` for Ubuntu.
+
 
 	$ sudo apt-key adv --keyserver pgp.mit.edu --recv-keys FD337D66
-	$ echo 'deb http://guten.me/debs DIST main' | sudo /etc/apt/sources.list.d/guten.list
+	$ echo 'deb http://guten.me/debs RELEASE main' | sudo /etc/apt/sources.list.d/guten.list
 	$ sudo apt-get update
 	$ sudo apt-get install <pkg>
 
@@ -35,6 +38,12 @@ Build
 
 1. Download the upstream package
 2. Build: `$ ./make-debs.sh`
+
+Development
+===========
+
+- Use [aptly](http://www.aptly.info/) to create an APT repository.
+- Documentation on creating an deb package: [Debian New Maintainers' Guide](http://www.debian.org/doc/manuals/maint-guide/index.en.html), [Packaging Wiki](https://wiki.debian.org/Packaging)
 
 Copyright
 -------
