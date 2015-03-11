@@ -1,5 +1,5 @@
-xware (2.0.31-1) UNRELEASED; urgency=low
+xware (1.0.31-3) UNRELEASED; urgency=low
 
   * Initial release. (Closes: #XXXXXX)
 
- -- guten <guten@udebian>  Sat, 07 Feb 2015 00:53:03 -0500
+ -- guten <guten@debian.lan>  Wed, 11 Mar 2015 19:01:36 +0800
