@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# USAGE:
+# ./release zsh zsh_1.0.deb
+
+name="$1"
+debfile="$2"
+
+aptly repo raspbian remove $name
+aptly repo raspbian add $debfile
+aptly publish update raspbian-wheezy
+cd ~/.aptly/publish
+git add .
+git commit -m "Update at $(date)"
+git push

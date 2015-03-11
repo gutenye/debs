@@ -11,7 +11,8 @@ Debs, My .deb packages for Raspbian(Raspberry Pi), Debian and Ubuntu
 A List of Packages
 -------------------
 
-- [xware](http://g.xunlei.com/forum-51-1.html): Xunlei in Linux (迅雷固件)
+- [xware](http://g.xunlei.com/forum-51-1.html): Raspbian only.  Xunlei in Linux (迅雷固件)
+- [syncthing](https://github.com/syncthing/syncthing): Raspbian only.  Open Source Continuous File Synchronization
 
 Supported Releases
 ---------------------
