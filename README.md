@@ -25,13 +25,14 @@ Install a Package
 
 1. Get your release name by `$ cat /etc/*-release`
 
-2. Replace the `RELEASE` with the name found above, e.g. `raspbian-wheezy` for Raspbian, `wheezy` for Debian, `utopic` for Ubuntu.
+2. Replace the `RELEASE` with the name you found, e.g. `raspbian-wheezy` for Raspbian, `wheezy` for Debian, `utopic` for Ubuntu.
 
-
-	$ sudo apt-key adv --keyserver pgp.mit.edu --recv-keys FD337D66
-	$ echo 'deb http://guten.me/debs RELEASE main' | sudo /etc/apt/sources.list.d/guten.list
-	$ sudo apt-get update
-	$ sudo apt-get install <pkg>
+``` bash
+$ sudo apt-key adv --keyserver pgp.mit.edu --recv-keys FD337D66
+$ echo 'deb http://guten.me/debs RELEASE main' | sudo /etc/apt/sources.list.d/guten.list
+$ sudo apt-get update
+$ sudo apt-get install PACKAGE
+```
 
 Build
 -----
@@ -43,6 +44,7 @@ Development
 ===========
 
 - Use [aptly](http://www.aptly.info/) to create an APT repository.
+- Use [Github Pages](https://pages.github.com/) to host the APT repository. Be aware that Github is not meant for this kind of hosting and have a [100MB per file limit](https://help.github.com/articles/what-is-my-disk-quota/), alternative you can use Amazon S3 for hosting.
 - Documentation on creating an deb package: [Debian New Maintainers' Guide](http://www.debian.org/doc/manuals/maint-guide/index.en.html), [Packaging Wiki](https://wiki.debian.org/Packaging)
 
 Copyright
