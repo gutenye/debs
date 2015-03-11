@@ -1,0 +1,2 @@
+version=3
+opts="filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/syncthing-$1\.tar\.gz/" https://github.com/syncthing/syncthing/releases .*/syncthing-.*v(\d\S*)\.tar\.gz

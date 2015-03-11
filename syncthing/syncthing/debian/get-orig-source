@@ -1,0 +1,12 @@
+#!/bin/bash
+
+VERSION=$(dpkg-parsechangelog -ldebian/changelog | sed -rne 's,^Version: ([^-]+).*,\1,p')
+URL="https://github.com/syncthing/syncthing/releases/download/v${VERSION}/syncthing-linux-arm-v${VERSION}.tar.gz"
+
+if [[ -e "../syncthing_${VERSION}.orig.tar.gz" ]]; then
+    echo "Already existing ../syncthing_${VERSION}.orig.tar.gz. Quit"
+    exit
+fi
+
+echo "Downloading $URL"
+curl --fail --continue-at - --location $URL > ../syncthing_${VERSION}.orig.tar.gz

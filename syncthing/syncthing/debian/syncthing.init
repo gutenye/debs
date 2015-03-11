@@ -1,0 +1,65 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          syncthing
+# Required-Start:    $network $syslog
+# Required-Stop:     $network $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: starts syncthing
+# Description:       starts syncthing using start-stop-daemon
+### END INIT INFO
+
+USER="guten"
+PATH=/sbin:/usr/sbin:/usr/local/sbin:/bin:/usr/bin:/usr/local/bin
+NAME=syncthing
+DAEMON="/usr/bin/syncthing"
+DAEMON_ARGS=""
+
+#[ -x $DAEMON ] || exit 0
+
+[ -f /etc/default/$NAME ] && . /etc/default/$NAME
+
+set -e
+
+. /lib/lsb/init-functions
+
+case "$1" in
+  start)
+    log_daemon_msg "Starting $NAME" "$NAME" || true
+    if start-stop-daemon --start --quiet --oknodo --chuid $USER --make-pidfile --background --pidfile /var/run/$NAME.pid --exec $DAEMON -- $DAEMON_ARGS; then
+      log_end_msg 0 || true
+    else
+      log_end_msg 1 || true
+    fi
+    ;;
+
+  stop)
+    log_daemon_msg "Stopping $NAME" "$NAME" || true
+    if start-stop-daemon --stop --quiet --oknodo --pidfile /var/run/$NAME.pid; then
+      log_end_msg 0 || true
+    else
+      log_end_msg 1 || true
+    fi
+    ;;
+
+  restart)
+    log_daemon_msg "Restarting $NAME" "$NAME" || true
+    start-stop-daemon --stop --quiet --oknodo --retry 30 --pidfile /var/run/$NAME.pid
+    if start-stop-daemon --start --quiet --oknodo --chuid $USER --make-pidfile --background --pidfile /var/run/$NAME.pid --exec $DAEMON -- $DAEMON_ARGS; then
+      log_end_msg 0 || true
+    else
+      log_end_msg 1 || true
+    fi
+    ;;
+
+  status)
+    status_of_proc -p /var/run/$NAME.pid "$DAEMON" $NAME && exit 0 || exit $?
+    ;;
+  *)
+    log_action_msg "Usage: $0 {start|stop|restart|status}" || true
+    exit 1
+    ;;
+esac
+
+exit 0

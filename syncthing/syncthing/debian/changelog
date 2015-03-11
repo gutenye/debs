@@ -1,0 +1,5 @@
+syncthing (0.10.25) UNRELEASED; urgency=low
+
+  * Initial release. (Closes: #XXXXXX)
+
+ -- Guten Ye <guten@debian.lan>  Wed, 11 Mar 2015 19:51:12 +0800
