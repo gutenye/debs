@@ -6,10 +6,11 @@
 name="$1"
 debfile="$2"
 
-aptly repo raspbian remove $name
-aptly repo raspbian add $debfile
-aptly publish update raspbian-wheezy
-cd ~/.aptly/publish
+#aptly repo remove raspbian $name
+#aptly repo add raspbian $debfile
+#aptly publish update raspbian-wheezy
+
+cd ~/.aptly/public
 git add .
 git commit -m "Update at $(date)"
 git push
