@@ -36,16 +36,14 @@ case "$1" in
 
   stop)
     log_daemon_msg "Stopping $NAME" "$NAME" || true
-    if start-stop-daemon --stop --quiet --oknodo --pidfile /var/run/$NAME.pid; then
-      log_end_msg 0 || true
-    else
-      log_end_msg 1 || true
-    fi
+    killall syncthing
+    log_end_msg 0 || true
     ;;
 
   restart)
     log_daemon_msg "Restarting $NAME" "$NAME" || true
-    start-stop-daemon --stop --quiet --oknodo --retry 30 --pidfile /var/run/$NAME.pid
+    killall syncthing
+    sleep 10
     if start-stop-daemon --start --quiet --oknodo --chuid $USER --make-pidfile --background --pidfile /var/run/$NAME.pid --exec $DAEMON -- $DAEMON_ARGS; then
       log_end_msg 0 || true
     else
