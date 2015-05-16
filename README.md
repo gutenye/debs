@@ -15,8 +15,8 @@ Linux Packaging is the boringest thing in the world, so I only maintain packages
 A List of Packages
 -------------------
 
-- [xware](http://g.xunlei.com/forum-51-1.html): Raspbian only.  Xunlei in Linux (迅雷固件)
-- [syncthing](https://github.com/syncthing/syncthing): Raspbian only.  Open Source Continuous File Synchronization
+- [xware](http://g.xunlei.com/forum-51-1.html): Raspbian only. Xunlei in Linux
+- [syncthing](https://github.com/syncthing/syncthing): Raspbian only. Open Source Continuous File Synchronization
 
 Supported Releases
 ---------------------
