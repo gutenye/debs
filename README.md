@@ -1,16 +1,15 @@
 Debs, My deb packages for Ubuntu, Debian and Raspbian(Raspberry Pi)
 ==========================================================
 
+[Homepage](https://github.com/gutenye/debs%) |
+[Issue Tracker](https://github.com/gutenye/debs%/issues) |
+[MIT License](http://choosealicense.com/licenses/mit) |
+[by Guten](http://guten.me) |
+[Bountysource](https://www.bountysource.com/teams/gutenye)
+
 See [aurs](https://github.com/gutenye/aurs) for my Arch Linux AUR Packages.
 
 Linux Packaging is the boringest thing in the world, so I only maintain packages used by myself, and they're usually on Raspbian. If you want more, please add as a Collaborator or send Pull-Requests. Luck for us, someone is working on [solutions](http://0pointer.net/blog/revisiting-how-we-put-together-linux-systems.html), and Snappy Ubuntu Core has a [new packaging way](https://developer.ubuntu.com/en/snappy/#snap-developers)
-
-|                |                                        |
-|----------------|----------------------------------------|
-| Homepage:      | https://github.com/GutenYe/debs        |
-| Author:	       | Guten                                  |
-| License:       | GPL                                    |
-| Issue Tracker: | https://github.com/GutenYe/debs/issues |
 
 A List of Packages
 -------------------
