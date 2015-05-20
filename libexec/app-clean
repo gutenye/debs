@@ -5,13 +5,13 @@
 # Usage: gutdeb clean
 
 set -e
-[ -n "$APP_DEBUG" ] && set -x
+(( $DEBUG >= 3 )) && set -x
 source "$APP_ROOT/libexec/lib.sh"
 
 main() {
   package=$(get_package)
   version=$(get_version)
-  rm -rf ../${package}?${version}* ../*.tar.gz
+  rm -rf debian/$package ../${package}?${version}* ../*.tar.gz
 }
 
 main "$@"

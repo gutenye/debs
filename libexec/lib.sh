@@ -3,12 +3,14 @@
 #  2 debug
 
 get_package() {
+  [[ ! -e "debian/changelog" ]] && error_exit "get_package: Can't find debian/changelog file"
   package=$(dpkg-parsechangelog | sed -n 's/^Source: //p')
   [[ "$package" == "" ]] && error_exit "Can't get package name"
   echo "$package"
 }
 
 get_version() {
+  [[ ! -e "debian/changelog" ]] && error_exit "get_version: Can't find debian/changelog file"
   version=$(dpkg-parsechangelog | sed -nr 's/^Version: ([^-]+).*/\1/p')
   [[ "$version" == "" ]] && error_exit "Can't get version"
   echo "$version"
@@ -43,7 +45,7 @@ error_exit() {
 }
 
 debug() {
-  if [[ $DEBUG == "1" ]]; then
+  if (( $DEBUG >= 1 )); then
     echo -e "$@" >&2
   fi
 }

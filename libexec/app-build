@@ -7,19 +7,20 @@
 # Invoke debuild -b
 
 set -e
-[ -n "$APP_DEBUG" ] && set -x
+(( $DEBUG >= 3 )) && set -x
 source "$APP_ROOT/libexec/lib.sh"
 
 main() {
   package=$(get_package)
   version=$(get_version)
+echo 1, $package, $version
 
   # download upstream tarball and extract it.
   uscan --force-download
 
   tar xf "../${package}_${version}.orig.tar.gz" -C ..
-  cd "../$package-$version"
-  ln -s "../$package/debian" .
+  ln -sf  "$(pwd)/debian" "../${package}-${version}"
+  cd "../${package}-${version}"
 
   debuild -b
 }
