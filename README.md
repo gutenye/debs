@@ -20,9 +20,9 @@ A List of Packages
 Supported Releases
 ---------------------
 
-**Raspbian**: raspbian-wheezy <br>
-**Debian**: wheezy <br>
-**Ubuntu**: utopic <br>
+**Raspbian**: raspbian raspbian-wheezy <br>
+**Debian**: debian wheezy <br>
+**Ubuntu**: debian ubuntu utopic <br>
 
 Install a Package
 ---------------
