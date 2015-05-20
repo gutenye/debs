@@ -1,0 +1,5 @@
+Origin: . debian
+Label: . debian
+Architecture: i386
+Archive: debian
+Component: main
