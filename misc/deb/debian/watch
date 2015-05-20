@@ -1,0 +1,2 @@
+version=3
+https://github.com/gutenye/gutdeb/tags .*v([-.\d]+).tar.gz

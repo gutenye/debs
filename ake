@@ -1,13 +1,21 @@
 #!/usr/bin/env bash
+#
+# USAGE:
+#
+#   ./ake package archlinux "$pkgdir"
+#
 
 package() {
-  prefix="$1"
-  [[ "$prefix" == "" ]] && echo "ERROR: USAGE is ./ake package <prefix>" && exit 1
+  distribution=$1; prefix="$2"
+  [[ "$prefix" == "" ]] && echo "ERROR: USAGE is ./ake package <distribution> <prefix>" && exit 1
+  case "$distribution" in
+    ubuntu ) lib="lib" ;;
+    * ) lib="usr/lib" ;;
+  esac
+
   mkdir -p "$prefix/usr/bin"
-  #mkdir -p "$prefix/usr/lib/systemd"
   mkdir -p "$prefix/usr/share/gutdeb"
-  cp -r bin libexec "$prefix/usr/share/gutdeb"
-  #cp misc/*.{service,timer} "$pkgdir/usr/lib/systemd/system"
+  cp -r bin libexec VERSION "$prefix/usr/share/gutdeb"
   ln -s "/usr/share/gutdeb/bin/gutdeb" "$prefix/usr/bin"
 }
 
