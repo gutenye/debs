@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#
+# Summary: Upload the package
+#
+# Usage: gutdeb upload
+#
+# Invoke aptly and git push
+
+set -e
+[ -n "$APP_DEBUG" ] && set -x
+source "$APP_ROOT/libexec/lib.sh"
+
+main() {
+  package=$(get_package)
+  version=$(get_version)
+
+  aptly repo remove default "$package"
+  aptly repo add default "../${package}_${version}*.deb"
+  aplty publish update debian
+
+  cd dist
+  git add .
+  git commit -m "Update at $(date)"
+  git push
+}
+
+main "$@"

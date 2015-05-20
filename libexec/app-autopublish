@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+#
+# Summary: Autopublish the packages
+#
+# Usage: gutdeb autopublish [dir ...]
+#
+#
+
+set -e
+[ -n "$APP_DEBUG" ] && set -x
+source "$APP_ROOT/libexec/lib.sh"
+
+main() {
+  for dir in "$@"; do
+    if [[ ! -e "$dir/debian/watch" ]]; then
+      say "::SKIP:: $dir -- there is no debian/watch file"
+      continue
+    fi
+
+    autopublish "$dir"
+  done
+}
+
+autopublish() {
+  dir="$1"; oldpwd="$PWD"
+  say "::BEGIN:: $dir"
+  cd "$dir"
+  package=$(get_package); version=$(get_version)
+
+  if ! ret=$(uscan --report); then
+    say "it is already the latest version"
+  else
+    if [[ "$ret" =~ Newest\ version\ on\ remote\ site\ is\ ([-_.0-9]+) ]]; then
+      newversion=${BASH_REMATCH[1]}
+      app-publish "$newversion"
+    fi
+  fi
+  cd $oldpwd
+}
+
+if [[ "$1" == "" ]]; then
+  main "."
+else
+  main "$@"
+fi

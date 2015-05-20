@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#
+# Summary: Publish deb package
+#
+# Usage: gutaur publish [version]
+#
+# Invokes clean -> version -> build -> upload
+
+set -e
+[ -n "$APP_DEBUG" ] && set -x
+source "$APP_ROOT/libexec/lib.sh"
+
+main() {
+  version="$1"
+
+  app-clean
+  if [[ $version != "" ]]; then
+    app-version $version
+  fi
+  app-build
+  app-upload
+}
+
+main "$@"

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#
+# Summary: Update package version
+#
+# Usage: gutdeb version <version>
+#
+# Invoke debchange --newversion
+
+set -e
+[ -n "$APP_DEBUG" ] && set -x
+source "$APP_ROOT/libexec/lib.sh"
+
+main() {
+  [[ "$1" == "" ]] && app-help --usage version >&2 && exit 1
+  version="$1"
+  debchange --newversion ${version}-1 updated
+}
+
+main "$@"
