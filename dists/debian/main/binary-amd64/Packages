@@ -7,11 +7,11 @@ Maintainer: Guten Ye <guten@example.com>
 Architecture: amd64
 Description: A deb helper.
   Easy packaging
-MD5sum: afbbdd24d9d7c7ffb8c8bdac93fb996e
-SHA1: 2844bf88abefcf20556a3792a2638e3edf57fff3
-SHA256: 66e0a142c5fdcd0bdcd10068d36de4ba7355f500218c828de554d402a9d64922
-Filename: pool/main/g/gutdeb/gutdeb_1.0.2-1_amd64.deb
-Size: 4314
+MD5sum: 0ac317bbaec128019fb18d4cfaa58e7a
+SHA1: ce7b646995326a1afc4abc8a5b8df86f44bbdbbf
+SHA256: aea56675a85b814d404f04006d484dd3d95b6150ef9b2df03d26b9e7e45ba688
 Source: 
 Homepage: https://github.com/gutenye/gutdebs
+Filename: pool/main/g/gutdeb/gutdeb_1.0.2-1_amd64.deb
+Size: 4310
 
