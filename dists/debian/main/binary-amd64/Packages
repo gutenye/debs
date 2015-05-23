@@ -1,16 +1,17 @@
 Package: gutdeb
+Version: 1.0.3-1
+Installed-Size: 49
 Priority: optional
 Section: net
-Installed-Size: 29
 Maintainer: Guten Ye <guten@example.com>
 Architecture: amd64
-Version: 1.0.2-1
-Filename: pool/main/g/gutdeb/gutdeb_1.0.2-1_amd64.deb
-Size: 4332
-MD5sum: 94d12238459461c7996a0d7e0c3a97e4
-SHA1: 663d4bd141993e8277f2b43e700995b13533ab4c
-SHA256: 99e6365d7e215bd004f3490f59b9359a9e226cbb90a8bd669f23647ad765a797
 Description: A deb helper.
   Easy packaging
+MD5sum: 32e919673b9abae90bdef4227e54af87
+SHA1: 914821ff21a538a2ed4f37a0bf4cc49a579e727a
+SHA256: f73115315b7c8cc25db5c34f63ce7b05d8c1cd59b1989606e1bb4b5b1540875d
 Homepage: https://github.com/gutenye/gutdebs
+Source: 
+Filename: pool/main/g/gutdeb/gutdeb_1.0.3-1_amd64.deb
+Size: 4322
 
