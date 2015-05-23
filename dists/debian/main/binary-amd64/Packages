@@ -7,9 +7,9 @@ Architecture: amd64
 Version: 1.0.2-1
 Filename: pool/main/g/gutdeb/gutdeb_1.0.2-1_amd64.deb
 Size: 4332
-MD5sum: c357e1462ad125e3a2862d3b94f112ba
-SHA1: 058a03ea7ab96de5e38cdc65dc57ceb795f13ea5
-SHA256: 640ee2231d59a7c8da9b45d546fb01d3505a023a6f71d5f34ac04830c854387d
+MD5sum: 94d12238459461c7996a0d7e0c3a97e4
+SHA1: 663d4bd141993e8277f2b43e700995b13533ab4c
+SHA256: 99e6365d7e215bd004f3490f59b9359a9e226cbb90a8bd669f23647ad765a797
 Description: A deb helper.
   Easy packaging
 Homepage: https://github.com/gutenye/gutdebs
