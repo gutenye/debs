@@ -1,8 +1,8 @@
 Debs, My deb packages for Ubuntu, Debian and Raspbian(Raspberry Pi)
 ==========================================================
 
-[Homepage](https://github.com/gutenye/debs%) |
-[Issue Tracker](https://github.com/gutenye/debs%/issues) |
+[Homepage](https://github.com/gutenye/debs) |
+[Issue Tracker](https://github.com/gutenye/debs/issues) |
 [MIT License](http://choosealicense.com/licenses/mit) |
 [by Guten](http://guten.me) |
 [Bountysource](https://www.bountysource.com/teams/gutenye)
@@ -32,7 +32,7 @@ Install a Package
 2. Replace the `RELEASE` with the name you found, e.g. `raspbian-wheezy` for Raspbian, `wheezy` for Debian, `utopic` for Ubuntu.
 
 ``` bash
-$ sudo apt-key adv --keyserver pgp.mit.edu --recv-keys FD337D66
+$ sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 80572343
 $ echo 'deb http://guten.me/debs RELEASE main' | sudo /etc/apt/sources.list.d/guten.list
 $ sudo apt-get update
 $ sudo apt-get install PACKAGE
