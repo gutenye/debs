@@ -1,5 +1,5 @@
 Origin: . debian
 Label: . debian
-Architecture: source
 Archive: debian
+Architecture: source
 Component: main

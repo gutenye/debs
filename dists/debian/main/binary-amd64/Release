@@ -1,5 +1,5 @@
 Origin: . debian
 Label: . debian
-Architecture: amd64
 Archive: debian
+Architecture: amd64
 Component: main
