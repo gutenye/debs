@@ -1,5 +1,12 @@
-syncthing (0.10.25) UNRELEASED; urgency=low
+syncthing (0.11.5-1) UNRELEASED; urgency=low
 
+  [ Guten Ye ]
   * Initial release. (Closes: #XXXXXX)
 
- -- Guten Ye <guten@debian.lan>  Wed, 11 Mar 2015 19:51:12 +0800
+  [ guten ]
+  * updated
+
+  [ Guten Ye ]
+  * updated
+
+ -- Guten Ye <ywzhaifei@gmail.com>  Sun, 24 May 2015 16:18:02 +0800

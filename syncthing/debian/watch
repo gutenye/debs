@@ -1,2 +1,2 @@
 version=3
-https://github.com/syncthing/syncthing/releases .*v([.\d]+).tar.gz$
+https://github.com/syncthing/syncthing/releases .*linux-amd64-v([.\d]+).tar.gz$

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+package=$1; version=$2
+cd ..
+ln -sfT ${package}-linux-amd64-v${version} ${package}-${version}
+cd $OLDPWD
