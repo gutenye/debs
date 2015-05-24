@@ -20,19 +20,19 @@ A List of Packages
 Supported Releases
 ---------------------
 
-**Raspbian**: raspbian raspbian-wheezy <br>
-**Debian**: debian wheezy <br>
-**Ubuntu**: debian ubuntu utopic <br>
+**Raspbian**: raspbian <br>
+**Debian**: debian <br>
+**Ubuntu**: debian <br>
 
 Install a Package
 ---------------
 
 1. Get your release name by `$ cat /etc/*-release`
 
-2. Replace the `RELEASE` with the name you found, e.g. `raspbian-wheezy` for Raspbian, `wheezy` for Debian, `utopic` for Ubuntu.
+2. Replace the `RELEASE` with the name you found, e.g. `raspbian` for Raspbian, `debian` for Debian, `debian` for Ubuntu.
 
 ``` bash
-$ sudo apt-key adv --keyserver pgp.mit.edu --recv-keys FD337D66
+$ sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 80572343
 $ echo 'deb http://guten.me/debs RELEASE main' | sudo tee /etc/apt/sources.list.d/guten.list
 $ sudo apt-get update
 $ sudo apt-get install PACKAGE
