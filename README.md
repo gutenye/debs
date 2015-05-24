@@ -1,8 +1,8 @@
 Debs, My deb packages for Ubuntu, Debian and Raspbian(Raspberry Pi)
 ==========================================================
 
-[Homepage](https://github.com/gutenye/debs%) |
-[Issue Tracker](https://github.com/gutenye/debs%/issues) |
+[Homepage](https://github.com/gutenye/debs) |
+[Issue Tracker](https://github.com/gutenye/debs/issues) |
 [MIT License](http://choosealicense.com/licenses/mit) |
 [by Guten](http://guten.me) |
 [Bountysource](https://www.bountysource.com/teams/gutenye)
@@ -33,7 +33,7 @@ Install a Package
 
 ``` bash
 $ sudo apt-key adv --keyserver pgp.mit.edu --recv-keys FD337D66
-$ echo 'deb http://guten.me/debs RELEASE main' | sudo /etc/apt/sources.list.d/guten.list
+$ echo 'deb http://guten.me/debs RELEASE main' | sudo tee /etc/apt/sources.list.d/guten.list
 $ sudo apt-get update
 $ sudo apt-get install PACKAGE
 ```
@@ -46,6 +46,21 @@ Build
 
 Development
 ===========
+
+Setup
+-----
+
+```
+$ Create a GPG key
+$ aptly repo create -distribution=wheezy default
+$ aptly publish repo -architectures="amd64,i386,source" default
+$ ln -s ~/.aptly/public dist
+$ cd dist
+$ git init
+$ git remote add origin git@github.com:gutenye/debs.git
+$ git checkout gh-pages
+$ git push -u origin gh-pages
+```
 
 - Use [aptly](http://www.aptly.info/) to create an APT repository.
 - Use [Github Pages](https://pages.github.com/) to host the APT repository. Be aware that Github is not meant for this kind of hosting and have a [100MB per file limit](https://help.github.com/articles/what-is-my-disk-quota/), alternative you can use Amazon S3 for hosting.
