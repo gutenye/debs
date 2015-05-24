@@ -6,4 +6,13 @@
 %:
 	dh $@
 
+override_dh_install:
+	dh_install
+	mkdir -p debian/syncthing/usr/bin
+	mkdir -p debian/syncthing/lib/systemd/system
+	mkdir -p debian/syncthing/lib/systemd/usr
+	cp syncthing debian/syncthing/usr/bin
+	cp etc/linux-systemd/system/syncthing@.service debian/syncthing/lib/systemd/system
+	cp etc/linux-systemd/user/syncthing.service debian/syncthing/lib/systemd/usr
+
 override_dh_strip:
