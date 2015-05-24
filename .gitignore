@@ -5,6 +5,7 @@
 !/*/debian
 /*/debian/files
 /*/debian/*/*
+!/*/debian/source
 *.dsc
 *.build
 *.changes
